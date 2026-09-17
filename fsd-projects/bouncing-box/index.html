@@ -8,7 +8,7 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-color: rgb(208, 243, 7);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -18,7 +18,13 @@
         /* Change me! */
         left: 0px;
       }
-
+body {
+ background-image: url("https://www.myincrediblewebsite.com/wp-content/uploads/2016/10/Dark-Spiral-Illusion.gif");
+ background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
       .board {
         height: 100vh;
       }
@@ -69,7 +75,9 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-
+        var boxX = 10;
+        var points = 0;
+        var speed = 10;
 
 
 
@@ -80,10 +88,13 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
-        
-
-          
+          boxX += speed;  
+          if (boxX > boardWidth) {
+            speed *= -1;
+          } else if(boxX < 0){
+            speed *= -1;
+          }
+             moveBoxTo(boxX); // Moves box to right edge
         }
 
         /**
@@ -94,10 +105,11 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-
-
-
-
+           changeBoxText(points);
+          boxX = boxX = 0;
+          points ++; // Increases variableName by 1
+          speed += 3; // Another way to add 3 to variableName
+          speed = 3 * points + 10;
         }
 
 
