@@ -47,3 +47,10 @@
     background: #0080FF;
     color: white;
 }
+
+body {
+ background-image: url("https://www.myincrediblewebsite.com/wp-content/uploads/2016/10/Dark-Spiral-Illusion.gif");
+ background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
